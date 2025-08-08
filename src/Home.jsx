@@ -9,6 +9,10 @@ import { VscSend } from "react-icons/vsc";
 import { MdOutlineCopyright } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
+import { IoAnalyticsSharp } from "react-icons/io5";
+import { PiTreeStructureBold } from "react-icons/pi";
+import { MdOutlineDeveloperMode } from "react-icons/md";
+import { SiTestcafe } from "react-icons/si";
 import avatar from './assets/syarif.png'
 import avocado from './assets/avocado.png'
 import { useState } from "react";
@@ -85,7 +89,7 @@ function Home() {
             <div className='flex flex-col gap-4'>
               <h1 className='font-bold text-3xl md:text-5xl'>Halo, saya Syarif Khalid Attamimi</h1>
               <p className="text-sm md:text-base">
-                Saya yang percaya bahwa teknologi bukan sekadar kode, tetapi sarana untuk memecahkan masalah dan memberikan pengalaman terbaik bagi pengguna. Mulai dari merancang tampilan yang ramah hingga mengoptimalkan performa sistem di balik layar, saya menikmati setiap tahap proses pengembangan.
+                Saya percaya bahwa teknologi bukan sekadar kode, tetapi sarana untuk memecahkan masalah dan memberikan pengalaman terbaik bagi pengguna. Mulai dari merancang tampilan yang ramah hingga mengoptimalkan performa sistem di balik layar, saya menikmati setiap tahap proses pengembangan.
               </p>
               <button className='bg-purple-600 px-4 py-2 w-full md:w-1/3 lg:w-1/4 rounded-lg text-white'>Say Hello!</button>
             </div>
@@ -154,48 +158,48 @@ function Home() {
             <div className="flex flex-col gap-4 w-full md:w-1/2">
               <div className="flex flex-col gap-4 p-4 md:p-6 rounded-lg bg-white">
                 <div className="flex justify-center items-center rounded-lg bg-purple-500 p-2 md:p-4 w-1/4 text-xl md:text-2xl text-white">
-                  <FaCalendarDays />
+                  <IoAnalyticsSharp />
                 </div>
                 <div className="font-semibold text-xl md:text-2xl">
                   <span>1. Analisis & Perencanaan</span>
                 </div>
                 <div className="text-sm md:text-md">
-                  <span>Memahami tujuan proyek, kebutuhan pengguna, dan ruang lingkup pekerjaan.</span>
+                  <span>Memahami tujuan proyek, kebutuhan pengguna, dan ruang lingkup pekerjaan, lalu menyusunnya menjadi rencana pengembangan yang terstruktur.</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4 p-4 md:p-6 rounded-lg bg-white">
                 <div className="flex justify-center items-center rounded-lg bg-purple-500 p-2 md:p-4 w-1/4 text-xl md:text-2xl text-white">
-                  <FaCalendarDays />
+                  <PiTreeStructureBold />
                 </div>
                 <div className="font-semibold text-xl md:text-2xl">
                   <span>2. Desain & Arsitektur Sistem</span>
                 </div>
                 <div className="text-sm md:text-md">
-                  <span>Membuat rancangan tampilan (UI/UX) yang intuitif serta arsitektur back end.</span>
+                  <span>Membuat rancangan tampilan (UI/UX) yang intuitif serta arsitektur back end yang scalable dan aman.</span>
                 </div>
               </div>
             </div>
             <div className="flex flex-col pt-0 md:pt-8 gap-4 w-full md:w-1/2">
               <div className="flex flex-col gap-4 p-4 md:p-6 rounded-lg bg-white">
                 <div className="flex justify-center items-center rounded-lg bg-purple-500 p-2 md:p-4 w-1/4 text-xl md:text-2xl text-white">
-                  <FaCalendarDays />
+                  <MdOutlineDeveloperMode />
                 </div>
                 <div className="font-semibold text-xl md:text-2xl">
                   <span>3. Pengembangan & Integrasi</span>
                 </div>
                 <div className="text-sm md:text-md">
-                  <span>Mengimplementasikan fitur pada front end dan back end.</span>
+                  <span>Mengimplementasikan fitur pada front end dan back end, lalu menghubungkannya dengan database dan layanan pendukung.</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4 p-4 md:p-6 rounded-lg bg-white">
                 <div className="flex justify-center items-center rounded-lg bg-purple-500 p-2 md:p-4 w-1/4 text-xl md:text-2xl text-white">
-                  <FaCalendarDays />
+                  <SiTestcafe />
                 </div>
                 <div className="font-semibold text-xl md:text-2xl">
                   <span>4. Pengujian & Rilis</span>
                 </div>
                 <div className="text-sm md:text-md">
-                  <span>Melakukan pengujian menyeluruh untuk memastikan performa.</span>
+                  <span>Melakukan pengujian menyeluruh untuk memastikan performa, keamanan, dan kompatibilitas sebelum aplikasi digunakan.</span>
                 </div>
               </div>
             </div>

@@ -3,6 +3,8 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 import { GoDownload } from "react-icons/go";
 import { FaCalendarDays } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
+import { TfiEmail } from "react-icons/tfi";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { CiLocationOn } from "react-icons/ci";
 import { VscSend } from "react-icons/vsc";
@@ -33,6 +35,21 @@ function Home() {
       setErrorBudget("");
     }
   };
+
+  const serviceArr = [
+    {
+      "h1":"Membuat tampilan yang memikat",
+      "p":"Mendesain antarmuka yang menarik, responsif, dan mudah digunakan."
+    },
+    {
+      "h1":"Membangun mesin di balik layar",
+      "p":"Menyusun logika aplikasi, mengelola database, dan menjaga keamanan data."
+    },
+    {
+      "h1":"Menghubungkan dan mengoptimalkan sistem",
+      "p":"Menyatukan frontend dan backend, menguji performa, dan menjaga aplikasi tetap optimal."
+    },
+  ]
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -73,7 +90,7 @@ function Home() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white z-40 fixed top-20 left-0 right-0 shadow-lg">
             <div className="flex flex-col">
-              <button className='hover:text-white hover:bg-purple-600 px-4 py-4'>Home</button>
+              <button href="#home" className='hover:text-white hover:bg-purple-600 px-4 py-4'>Home</button>
               <button className='hover:text-white hover:bg-purple-600 px-4 py-4'>About</button>
               <button className='hover:text-white hover:bg-purple-600 px-4 py-4'>Process</button>
               <button className='hover:text-white hover:bg-purple-600 px-4 py-4'>Blog</button>
@@ -242,15 +259,15 @@ function Home() {
         {/* CTA Section */}
         <section className="flex flex-col gap-4 md:gap-8 items-center py-8 md:py-16 text-white bg-gray-900 px-4">
           <div className="flex flex-col text-2xl md:text-4xl font-semibold text-center">
-            <h1>Do you have project idia?</h1>
-            <h1>Let's discuss your project!</h1>
+            <h1>Apakah Anda memiliki ide project?</h1>
+            <h1>Mari diskusikan idemu!</h1>
           </div>
-          <div className="flex text-center w-full md:w-1/2 font-medium text-sm md:text-base">
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, facere?</span>
+          <div className="flex justify-center text-center w-full md:w-1/2 font-medium text-sm md:text-base">
+            <span>Wujudkan ide kreatif Anda menjadi kenyataan. Bagikan gagasan, rencanakan bersama, dan temukan solusi inovatif melalui kolaborasi.</span>
           </div>
           <div>
             <button className="flex items-center gap-2 text-base md:text-lg justify-center rounded-sm font-semibold px-4 py-2 text-white bg-purple-600">
-              <span>Let's Work Together</span>
+              <span>Mari Bekerja sama</span>
               <IoIosArrowRoundForward className="text-2xl md:text-3xl"/>
             </button>
           </div>
@@ -260,21 +277,20 @@ function Home() {
         <section className="flex flex-col md:flex-row gap-8 p-4 md:p-16 bg-gray-200 items-center">
           <div className="flex flex-col w-full md:w-1/2 gap-4">
             <div className="text-2xl md:text-4xl font-semibold">
-              <h1>What I do?</h1>
+              <h1>Apa yang bisa saya lakukan?</h1>
             </div>
             <div className="flex flex-col gap-4 text-sm md:text-base">
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, totam aliquid possimus eos necessitatibus soluta enim.</span>
-              <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span>
+              <span>Membuat aplikasi dari nol hingga siap digunakan. Saya merancang tampilan yang enak dilihat, membangun sistem yang kuat di belakang layar, dan memastikan semuanya berjalan tanpa hambatan. Setiap proyek adalah tantangan baru untuk mengubah ide menjadi karya digital yang berguna dan menyenangkan untuk pengguna.</span>
             </div>
             <div className="flex text-white font-medium">
               <button className="px-4 py-2 bg-purple-600 rounded-sm text-sm md:text-base">Say Hello!</button>
             </div>
           </div>
           <div className="flex flex-col gap-4 w-full md:w-1/2">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="flex flex-col bg-white p-4 md:p-8 gap-2 rounded-md hover:drop-shadow-xl hover:border-l-4 md:hover:border-l-8 hover:border-purple-600">
-                <h1 className="text-lg md:text-2xl font-semibold">User Experience (UX)</h1>
-                <p className="text-sm md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique rem enim qui sunt placeat atque iste.</p>
+            {serviceArr.map((item, index) => (
+              <div key={index} className="flex flex-col bg-white p-4 md:p-8 gap-2 rounded-md hover:drop-shadow-xl hover:border-l-4 md:hover:border-l-8 hover:border-purple-600">
+                <h1 className="text-lg md:text-2xl font-semibold">{item.h1}</h1>
+                <p className="text-sm md:text-base">{item.p}</p>
               </div>
             ))}
           </div>
@@ -284,7 +300,7 @@ function Home() {
         <section className="flex flex-col md:flex-row gap-8 p-4 md:p-16 m-0 md:m-10 max-w-full md:max-w-[calc(100%-5rem)] bg-white drop-shadow-xl rounded-xl">
           <div className="flex flex-col w-full md:w-1/2 gap-4">
             <div className="text-2xl md:text-3xl font-semibold">
-              <h1>Let's discuss your project</h1>
+              <h1>Mari diskusikan project mu</h1>
             </div>
             <div className="text-sm md:text-base">
               <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nam, delectus culpa provident.</span>
@@ -294,26 +310,26 @@ function Home() {
                 <CiLocationOn />
               </div>
               <div className="flex flex-col">
-                <span className="text-sm md:text-base">Address :</span>
-                <span className="text-lg md:text-xl font-semibold">New Mexico 31134</span>
+                <span className="text-sm md:text-base">Alamat :</span>
+                <span className="text-lg md:text-xl font-semibold">Depok, Jawa barat</span>
               </div>
             </div>
             <div className="flex gap-4 md:gap-6 w-full bg-white p-4 md:p-6 rounded-md hover:drop-shadow-xl hover:border-r-4 md:hover:border-r-6 hover:border-purple-600">
               <div className="text-white bg-purple-600 p-2 md:p-4 text-xl md:text-3xl rounded-sm">
-                <CiLocationOn />
+                <TfiEmail />
               </div>
               <div className="flex flex-col">
-                <span className="text-sm md:text-base">Address :</span>
-                <span className="text-lg md:text-xl font-semibold">New Mexico 31134</span>
+                <span className="text-sm md:text-base">Email :</span>
+                <span className="text-lg md:text-xl font-semibold">syarif.khalid@gmail.com</span>
               </div>
             </div>
             <div className="flex gap-4 md:gap-6 w-full bg-white p-4 md:p-6 rounded-md hover:drop-shadow-xl hover:border-r-4 md:hover:border-r-6 hover:border-purple-600">
               <div className="text-white bg-purple-600 p-2 md:p-4 text-xl md:text-3xl rounded-sm">
-                <CiLocationOn />
+                <FaWhatsapp />
               </div>
               <div className="flex flex-col">
-                <span className="text-sm md:text-base">Address :</span>
-                <span className="text-lg md:text-xl font-semibold">New Mexico 31134</span>
+                <span className="text-sm md:text-base">WhatsApp :</span>
+                <span className="text-lg md:text-xl font-semibold">+62 851-5092-1837</span>
               </div>
             </div>
           </div>
@@ -324,7 +340,7 @@ function Home() {
             <div className="flex flex-col gap-4 md:gap-6">
               <input 
                 type="text" 
-                placeholder="Name*" 
+                placeholder="Nama*" 
                 className="px-4 py-2 text-base md:text-xl focus:outline-none focus:border-b focus:border-purple-600 focus:placeholder-purple-600"
               />
               <input 
@@ -334,7 +350,7 @@ function Home() {
               />
               <input 
                 type="text" 
-                placeholder="Location" 
+                placeholder="Lokasi" 
                 className="px-4 py-2 text-base md:text-xl focus:outline-none focus:border-b focus:border-purple-600 focus:placeholder-purple-600"
               />
               <div className="flex flex-col md:flex-row gap-4">
@@ -350,19 +366,19 @@ function Home() {
                 </div>
                 <input 
                   type="text" 
-                  placeholder="Subject*" 
+                  placeholder="Subyek*" 
                   className="px-4 py-2 text-base md:text-xl focus:outline-none focus:border-b focus:border-purple-600 focus:placeholder-purple-600 w-full md:w-1/2"
                 />
               </div>
               <input 
                 type="text" 
-                placeholder="Message*" 
+                placeholder="Pesan*" 
                 className="px-4 py-2 text-base md:text-xl focus:outline-none focus:border-b focus:border-purple-600 focus:placeholder-purple-600"
               />
             </div>
             <div>
               <button className="flex text-base md:text-lg gap-2 items-center px-4 py-2 text-white rounded-md bg-purple-600">
-                <span>Submit</span>
+                <span>Kirim</span>
                 <VscSend />
               </button>
             </div>

@@ -69,12 +69,21 @@ function Home() {
           
           {/* Desktop Navigation */}
           <div className='hidden md:flex'>
-            <button name="home" className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Home</button>
-            <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>About</button>
-            <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Process</button>
-            <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Blog</button>
-            <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Services</button>
-            <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Contact</button>
+            <a href="#home">
+              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Home</button>
+            </a>
+            <a href="#about">
+              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>About</button>
+            </a>
+            <a href="#process">
+              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Process</button>
+            </a>
+            <a href="#service">
+              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Services</button>
+            </a>
+            <a href="#contact">
+              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Contact</button>
+            </a>
           </div>
           
           {/* Mobile Menu Button */}
@@ -89,13 +98,22 @@ function Home() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white z-40 fixed top-20 left-0 right-0 shadow-lg">
-            <div className="flex flex-col">
-              <button href="#home" className='hover:text-white hover:bg-purple-600 px-4 py-4'>Home</button>
-              <button className='hover:text-white hover:bg-purple-600 px-4 py-4'>About</button>
-              <button className='hover:text-white hover:bg-purple-600 px-4 py-4'>Process</button>
-              <button className='hover:text-white hover:bg-purple-600 px-4 py-4'>Blog</button>
-              <button className='hover:text-white hover:bg-purple-600 px-4 py-4'>Services</button>
-              <button className='hover:text-white hover:bg-purple-600 px-4 py-4'>Contact</button>
+            <div className="flex flex-col w-full">
+              <a href="#home"  className='hover:text-white hover:bg-purple-600 px-4 py-2'>
+                <button>Home</button>
+              </a>
+              <a href="#about" className='hover:text-white hover:bg-purple-600 px-4 py-2'>
+                <button>About</button>
+              </a>
+              <a href="#process" className='hover:text-white hover:bg-purple-600 px-4 py-2'>
+                <button>Process</button>
+              </a>
+              <a href="#service" className='hover:text-white hover:bg-purple-600 px-4 py-2'>
+                <button>Services</button>
+              </a>
+              <a href="#contact" className='hover:text-white hover:bg-purple-600 px-4 py-2'>
+                <button>Contact</button>
+              </a>
             </div>
           </div>
         )}
@@ -131,7 +149,7 @@ function Home() {
         </section>
 
         {/* About Section */}
-        <section className='flex flex-col md:flex-row gap-8 md:gap-20 px-4 md:px-16 py-8 md:py-16 w-full m-0 md:m-10 max-w-full md:max-w-[calc(100%-5rem)] bg-white drop-shadow-xl rounded-xl'>
+        <section id="about" className='flex flex-col md:flex-row gap-8 md:gap-20 px-4 md:px-16 py-8 md:py-16 w-full m-0 md:m-10 max-w-full md:max-w-[calc(100%-5rem)] bg-white drop-shadow-xl rounded-xl'>
           <div className="flex flex-col items-center w-full md:w-1/3">
             <div className="bg-orange-200 rounded-xl w-full max-w-xs">
               <img src={avatar} alt="" className="object-cover" />
@@ -164,7 +182,7 @@ function Home() {
         </section>
 
         {/* Work Process Section */}
-        <section className='flex flex-col md:flex-row gap-8 md:gap-20 pt-8 md:pt-36 px-4 md:px-16 py-8 md:py-16 w-full bg-gray-200 rounded-xl'>
+        <section id="process" className='flex flex-col md:flex-row gap-8 md:gap-20 pt-8 md:pt-36 px-4 md:px-16 py-8 md:py-16 w-full bg-gray-200 rounded-xl'>
           <div className="flex w-full md:w-1/2 flex-col justify-center gap-4 text-base md:text-xl">
             <h1 className="font-semibold text-3xl md:text-5xl">Work Process</h1>
             <p>
@@ -274,7 +292,7 @@ function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="flex flex-col md:flex-row gap-8 p-4 md:p-16 bg-gray-200 items-center">
+        <section id="service" className="flex flex-col md:flex-row gap-8 p-4 md:p-16 bg-gray-200 items-center">
           <div className="flex flex-col w-full md:w-1/2 gap-4">
             <div className="text-2xl md:text-4xl font-semibold">
               <h1>Apa yang bisa saya lakukan?</h1>
@@ -297,7 +315,7 @@ function Home() {
         </section>
 
         {/* Contact Section */}
-        <section className="flex flex-col md:flex-row gap-8 p-4 md:p-16 m-0 md:m-10 max-w-full md:max-w-[calc(100%-5rem)] bg-white drop-shadow-xl rounded-xl">
+        <section id="contact" className="flex flex-col md:flex-row gap-8 p-4 md:p-16 m-0 md:m-10 max-w-full md:max-w-[calc(100%-5rem)] bg-white drop-shadow-xl rounded-xl">
           <div className="flex flex-col w-full md:w-1/2 gap-4">
             <div className="text-2xl md:text-3xl font-semibold">
               <h1>Mari diskusikan project mu</h1>

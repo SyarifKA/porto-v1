@@ -42,6 +42,26 @@ function Home() {
     }
   };
 
+  const [whatsapp, setWhatsapp] = useState('');
+  const [errorWA, setErrorWA] = useState('');
+
+  const handleWAChange = (e) => {
+    const value = e.target.value;
+    // Hanya izinkan input angka
+    if (/^[0-9]*$/.test(value)) {
+      setWhatsapp(value);
+      setErrorWA('');
+    } else {
+      setErrorWA('Hanya angka yang diperbolehkan');
+    }
+    if (value.length < 13) {
+      setWhatsapp(value);
+      setErrorWA('');
+    } else {
+      setErrorWA('Masukkan nomor yang valid');
+    }
+  }
+
   const serviceArr = [
     {
       h1:"Membuat tampilan yang memikat",
@@ -336,7 +356,7 @@ function Home() {
         <section id="service" className="flex flex-col gap-12 p-4 md:p-16 bg-white items-center">
           <div className="flex flex-col gap-4 text-center items-center">
             <h1 className="font-semibold text-4xl">Teknologi</h1>
-            <p className="md:w-1/2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate aspernatur fuga necessitatibus maxime iusto iste accusantium maiores ipsa adipisci! Quaerat?</p>
+            <p className="md:w-3/5">Saya menguasai berbagai teknologi modern untuk pengembangan aplikasi web, mulai dari sisi front end hingga back end. Saya terbiasa membangun sistem yang efisien, aman, dan mudah dikembangkan, dengan memanfaatkan teknologi yang sesuai kebutuhan proyek.</p>
           </div>
           <div className="relative bg-white drop-shadow-xl max-w-4/5 overflow-hidden">
             <Marquee speed={30} gradient={false} className="flex items-center">
@@ -353,10 +373,10 @@ function Home() {
         <section id="contact" className="flex flex-col md:flex-row gap-8 p-4 md:p-16 m-0 md:m-10 max-w-full md:max-w-[calc(100%-5rem)] bg-white drop-shadow-xl rounded-xl">
           <div className="flex flex-col w-full md:w-1/2 gap-4">
             <div className="text-2xl md:text-3xl font-semibold">
-              <h1>Mari diskusikan project mu</h1>
+              <h1>Mari diskusikan project Anda</h1>
             </div>
             <div className="text-sm md:text-base">
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nam, delectus culpa provident.</span>
+              <span>Jika Anda ingin berdiskusi atau bertemu secara langsung, silakan datang ke alamat saya atau hubungi kontak berikut:</span>
             </div>
             <div className="flex gap-4 md:gap-6 w-full bg-white p-4 md:p-6 rounded-md hover:drop-shadow-xl hover:border-r-4 md:hover:border-r-6 hover:border-purple-600">
               <div className="text-white bg-purple-600 p-2 md:p-4 text-xl md:text-3xl rounded-sm">
@@ -386,51 +406,97 @@ function Home() {
               </div>
             </div>
           </div>
-          <form action="" className="flex flex-col gap-4 md:gap-6 w-full md:w-1/2">
+
+          <form 
+            action={import.meta.env.VITE_FORMSPREE_ENDPOINT} 
+            method="POST" 
+            className="flex flex-col gap-4 md:gap-6 w-full md:w-1/2"
+          >
             <div className="text-sm md:text-base">
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia illum nemo maiores unde ipsa tenetur.</span>
+              <span>Punya pertanyaan, ide, atau ingin bekerja sama? Tulis saja di form di bawah, dan saya akan segera menghubungi Anda kembali.</span>
             </div>
+            
             <div className="flex flex-col gap-4 md:gap-6">
+              {/* Tambahkan name attribute untuk semua input */}
               <input 
                 type="text" 
+                name="nama"
                 placeholder="Nama*" 
+                required
                 className="px-4 py-2 text-base md:text-xl focus:outline-none focus:border-b focus:border-purple-600 focus:placeholder-purple-600"
               />
+              
+              <input 
+                type="text" 
+                name="whatsapp"
+                placeholder="WhatsApp*"
+                value={whatsapp}
+                onChange={handleWAChange}
+                required
+                className="px-4 py-2 text-base md:text-xl focus:outline-none focus:border-b focus:border-purple-600 focus:placeholder-purple-600"
+              />
+              {errorWA && <p className="text-red-500 text-md mt-1">{errorWA}</p>}
+
               <input 
                 type="email" 
+                name="email"
                 placeholder="Email*" 
+                required
                 className="px-4 py-2 text-base md:text-xl focus:outline-none focus:border-b focus:border-purple-600 focus:placeholder-purple-600"
               />
+              
               <input 
                 type="text" 
+                name="lokasi"
                 placeholder="Lokasi" 
                 className="px-4 py-2 text-base md:text-xl focus:outline-none focus:border-b focus:border-purple-600 focus:placeholder-purple-600"
               />
+              
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="flex flex-col w-full md:w-1/2">
                   <input 
                     type="text" 
+                    name="budget"
                     value={budget} 
                     onChange={handleBudgetChange} 
                     placeholder="Budget*" 
+                    required
                     className="px-4 py-2 text-base md:text-xl focus:outline-none focus:border-b focus:border-purple-600 focus:placeholder-purple-600"
                   />
                   {errorBudget && <p className="text-red-500 text-xs md:text-sm">{errorBudget}</p>}
                 </div>
+                
                 <input 
                   type="text" 
+                  name="subyek"
                   placeholder="Subyek*" 
+                  required
                   className="px-4 py-2 text-base md:text-xl focus:outline-none focus:border-b focus:border-purple-600 focus:placeholder-purple-600 w-full md:w-1/2"
                 />
               </div>
-              <input 
-                type="text" 
+              
+              <textarea 
+                name="pesan"
                 placeholder="Pesan*" 
+                required
                 className="px-4 py-2 text-base md:text-xl focus:outline-none focus:border-b focus:border-purple-600 focus:placeholder-purple-600"
-              />
+                rows="4"
+              ></textarea>
             </div>
+            
+            {/* Honeypot field untuk anti-spam */}
+            <input type="text" name="_gotcha" className="hidden" />
+            
+            {/* Redirect setelah submit (opsional) */}
+            <input type="hidden" name="_next" value="https://porto-v1-theta.vercel.app/" />
+
+            <input type="hidden" name="_subject" value="Pesan Baru dari Website" />
+            
             <div>
-              <button className="flex text-base md:text-lg gap-2 items-center px-4 py-2 text-white rounded-md bg-purple-600">
+              <button 
+                type="submit" 
+                className="flex text-base md:text-lg gap-2 items-center px-4 py-2 text-white rounded-md bg-purple-600 hover:bg-purple-700 transition-colors"
+              >
                 <span>Kirim</span>
                 <VscSend />
               </button>

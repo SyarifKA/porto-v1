@@ -16,8 +16,14 @@ import { PiTreeStructureBold } from "react-icons/pi";
 import { MdOutlineDeveloperMode } from "react-icons/md";
 import { SiTestcafe } from "react-icons/si";
 import avatar from './assets/syarif.png'
+import jsLogo from './assets/js-logo.png'
 import avocado from './assets/avocado.png'
+import reactLogo from './assets/react.svg'
+import springbootLogo from './assets/springboot-logo.svg'
+import goLogo from './assets/go-logo.png'
+import javaLogo from './assets/java-logo.png'
 import { useState } from "react";
+import Marquee from "react-fast-marquee";
 
 function Home() {
   const [budget, setBudget] = useState("");
@@ -38,18 +44,26 @@ function Home() {
 
   const serviceArr = [
     {
-      "h1":"Membuat tampilan yang memikat",
-      "p":"Mendesain antarmuka yang menarik, responsif, dan mudah digunakan."
+      h1:"Membuat tampilan yang memikat",
+      p:"Mendesain antarmuka yang menarik, responsif, dan mudah digunakan."
     },
     {
-      "h1":"Membangun mesin di balik layar",
-      "p":"Menyusun logika aplikasi, mengelola database, dan menjaga keamanan data."
+      h1:"Membangun mesin di balik layar",
+      p:"Menyusun logika aplikasi, mengelola database, dan menjaga keamanan data."
     },
     {
-      "h1":"Menghubungkan dan mengoptimalkan sistem",
-      "p":"Menyatukan frontend dan backend, menguji performa, dan menjaga aplikasi tetap optimal."
+      h1:"Menghubungkan dan mengoptimalkan sistem",
+      p:"Menyatukan frontend dan backend, menguji performa, dan menjaga aplikasi tetap optimal."
     },
   ]
+
+  const logos = [
+    { src: jsLogo, alt: "JavaScript" },
+    { src: reactLogo, alt: "React" },
+    { src: goLogo, alt: "Golang" },
+    { src: springbootLogo, alt: "Springboot" },
+    { src: javaLogo, alt: "Java" },
+  ];
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -172,17 +186,21 @@ function Home() {
               Saya adalah seorang Fullstack Developer yang menikmati proses membangun aplikasi dari awal hingga siap digunakan. Bagi saya, kode bukan sekadar rangkaian perintah, tetapi media untuk mewujudkan ide menjadi solusi nyata. Dengan menguasai teknologi modern seperti JavaScript, React.js, Golang, dan PostgreSQL, saya memadukan tampilan yang menarik dengan performa yang optimal, agar setiap aplikasi memberikan pengalaman terbaik bagi penggunanya.
             </p>
             <div className="flex flex-col md:flex-row gap-4 text-purple-600">
-              <button className="bg-purple-600 text-white px-4 py-2">Projek saya</button>
-              <button className="flex items-center justify-center px-4 py-2 gap-2 border border-purple-600">
-                <GoDownload />
-                <span>Unduh CV</span>
-              </button>
+              <a href="#project">
+                <button className="bg-purple-600 text-white px-4 py-2">Projek saya</button>
+              </a>
+              <a href="https://drive.google.com/file/d/1MIip2wjsWeBRdo9in7r8M1xhPPLktL2o/view?usp=sharing">
+                <button className="flex items-center justify-center px-4 py-2 gap-2 border border-purple-600">
+                  <GoDownload />
+                  <span>Unduh CV</span>
+                </button>
+              </a>
             </div>
           </div>
         </section>
 
         {/* Work Process Section */}
-        <section id="process" className='flex flex-col md:flex-row gap-8 md:gap-20 pt-8 md:pt-36 px-4 md:px-16 py-8 md:py-16 w-full bg-gray-200 rounded-xl'>
+        <section id="process" className='flex flex-col md:-mt-24 md:flex-row gap-8 md:gap-20 pt-8 md:pt-36 px-4 md:px-16 py-8 md:py-16 w-full bg-gray-200 rounded-xl'>
           <div className="flex w-full md:w-1/2 flex-col justify-center gap-4 text-base md:text-xl">
             <h1 className="font-semibold text-3xl md:text-5xl">Work Process</h1>
             <p>
@@ -242,7 +260,7 @@ function Home() {
         </section>
 
         {/* Portfolio Section */}
-        <section className='flex flex-col p-4 md:p-16 w-full gap-8'> 
+        <section id="project" className='flex flex-col p-4 md:p-16 w-full gap-8'> 
           <div className="flex flex-col text-center items-center gap-2">
             <h1 className="text-2xl md:text-3xl font-semibold">Portofolio</h1>
             <p className="w-full md:w-2/3 text-sm md:text-base">
@@ -311,6 +329,23 @@ function Home() {
                 <p className="text-sm md:text-base">{item.p}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Technologies Section */}
+        <section id="service" className="flex flex-col gap-12 p-4 md:p-16 bg-white items-center">
+          <div className="flex flex-col gap-4 text-center items-center">
+            <h1 className="font-semibold text-4xl">Teknologi</h1>
+            <p className="md:w-1/2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate aspernatur fuga necessitatibus maxime iusto iste accusantium maiores ipsa adipisci! Quaerat?</p>
+          </div>
+          <div className="relative bg-white drop-shadow-xl max-w-4/5 overflow-hidden">
+            <Marquee speed={30} gradient={false} className="flex items-center">
+              {[...logos, ...logos, ...logos].map((logo, index) => (
+                <div key={index} className="mx-8 w-30 h-30 flex items-center justify-center flex-shrink-0">
+                  <img src={logo.src} alt={logo.alt} className="w-full h-full" />
+                </div>
+              ))}
+            </Marquee>
           </div>
         </section>
 

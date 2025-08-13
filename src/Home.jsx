@@ -85,6 +85,51 @@ function Home() {
     { src: javaLogo, alt: "Java" },
   ];
 
+  const projectList = [
+    {
+      image: avocado,
+      name: "UI-UX DESIGN",
+      title: "Product Admin Dashboard",
+      desc : "lorem ipsum dolor sit, amet consectuer adipsijcing elit.",
+      redirect: "#home"
+    },
+    {
+      image: avocado,
+      name: "UI-UX DESIGN",
+      title: "Product Admin Dashboard",
+      desc : "lorem ipsum dolor sit, amet consectuer adipsijcing elit.",
+      redirect: "#home"
+    },
+    {
+      image: avocado,
+      name: "UI-UX DESIGN",
+      title: "Product Admin Dashboard",
+      desc : "lorem ipsum dolor sit, amet consectuer adipsijcing elit.",
+      redirect: "#home"
+    },
+    {
+      image: avocado,
+      name: "UI-UX DESIGN",
+      title: "Product Admin Dashboard",
+      desc : "lorem ipsum dolor sit, amet consectuer adipsijcing elit.",
+      redirect: "#home"
+    },
+    {
+      image: avocado,
+      name: "UI-UX DESIGN",
+      title: "Product Admin Dashboard",
+      desc : "lorem ipsum dolor sit, amet consectuer adipsijcing elit.",
+      redirect: "#home"
+    },
+    {
+      image: avocado,
+      name: "UI-UX DESIGN",
+      title: "Product Admin Dashboard",
+      desc : "lorem ipsum dolor sit, amet consectuer adipsijcing elit.",
+      redirect: "#home"
+    },
+  ]
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -104,19 +149,19 @@ function Home() {
           {/* Desktop Navigation */}
           <div className='hidden md:flex'>
             <a href="#home">
-              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Home</button>
+              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Beranda</button>
             </a>
             <a href="#about">
-              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>About</button>
+              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Tentang</button>
             </a>
             <a href="#process">
-              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Process</button>
+              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Proses</button>
             </a>
             <a href="#service">
-              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Services</button>
+              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Layanan</button>
             </a>
             <a href="#contact">
-              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Contact</button>
+              <button className='hover:text-white hover:bg-purple-600 px-4 py-2 rounded-lg'>Kontak</button>
             </a>
           </div>
           
@@ -134,19 +179,19 @@ function Home() {
           <div className="md:hidden bg-white z-40 fixed top-20 left-0 right-0 shadow-lg">
             <div className="flex flex-col w-full">
               <a href="#home"  className='hover:text-white hover:bg-purple-600 px-4 py-2'>
-                <button>Home</button>
+                <button>Beranda</button>
               </a>
               <a href="#about" className='hover:text-white hover:bg-purple-600 px-4 py-2'>
-                <button>About</button>
+                <button>Tentang</button>
               </a>
               <a href="#process" className='hover:text-white hover:bg-purple-600 px-4 py-2'>
-                <button>Process</button>
+                <button>Proses</button>
               </a>
               <a href="#service" className='hover:text-white hover:bg-purple-600 px-4 py-2'>
-                <button>Services</button>
+                <button>Layanan</button>
               </a>
               <a href="#contact" className='hover:text-white hover:bg-purple-600 px-4 py-2'>
-                <button>Contact</button>
+                <button>Kontak</button>
               </a>
             </div>
           </div>
@@ -222,7 +267,7 @@ function Home() {
         {/* Work Process Section */}
         <section id="process" className='flex flex-col md:-mt-24 md:flex-row gap-8 md:gap-20 pt-8 md:pt-36 px-4 md:px-16 py-8 md:py-16 w-full bg-gray-200 rounded-xl'>
           <div className="flex w-full md:w-1/2 flex-col justify-center gap-4 text-base md:text-xl">
-            <h1 className="font-semibold text-3xl md:text-5xl">Work Process</h1>
+            <h1 className="font-semibold text-3xl md:text-5xl">Proses Kerja</h1>
             <p>
               Sebagai seorang Fullstack Developer, saya mengerjakan setiap proyek dengan pendekatan menyeluruh — mulai dari memahami kebutuhan pengguna hingga memastikan hasil akhir bekerja sesuai harapan. Proses kerja saya dirancang untuk menjaga kualitas, efisiensi, dan keberlanjutan sistem dalam jangka panjang.
             </p>
@@ -282,26 +327,28 @@ function Home() {
         {/* Portfolio Section */}
         <section id="project" className='flex flex-col p-4 md:p-16 w-full gap-8'> 
           <div className="flex flex-col text-center items-center gap-2">
-            <h1 className="text-2xl md:text-3xl font-semibold">Portofolio</h1>
+            <h1 className="text-2xl md:text-3xl font-semibold">Proyek</h1>
             <p className="w-full md:w-2/3 text-sm md:text-base">
               Setiap proyek dalam portofolio ini adalah hasil dari proses kreatif yang memadukan ide, desain, dan teknologi. Dari merancang antarmuka yang nyaman digunakan hingga membangun sistem yang kuat di belakang layar, setiap karya mencerminkan dedikasi saya dalam menciptakan solusi digital yang bermanfaat.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full drop-shadow-2xl gap-4">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="flex flex-col w-full bg-white">
+            {projectList.map((item, index) => (
+              <div key={index} className="flex flex-col w-full bg-white">
                 <div className="">
-                  <img src={avocado} alt="" className="w-full" />
+                  <img src={item.image} alt="" className="w-full" />
                 </div>
                 <div className="flex flex-col gap-2 p-4 text-sm">
-                  <span className="">UI-UX DESIGN</span>
-                  <span className="text-lg md:text-xl font-medium">Product Admin Dashboard</span>
-                  <p className="text-xs md:text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                  <span className="">{item.name}</span>
+                  <span className="text-lg md:text-xl font-medium">{item.title}</span>
+                  <p className="text-xs md:text-sm">{item.desc}</p>
                   <div>
+                    <a href={item.redirect}>
                     <button className="flex justify-center items-center gap-2 border px-4 py-2 text-purple-500 rounded-lg border-purple-500 text-sm">
                       <span>Case Study</span>
                       <IoIosArrowRoundForward />
                     </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -339,7 +386,9 @@ function Home() {
               <span>Membuat aplikasi dari nol hingga siap digunakan. Saya merancang tampilan yang enak dilihat, membangun sistem yang kuat di belakang layar, dan memastikan semuanya berjalan tanpa hambatan. Setiap proyek adalah tantangan baru untuk mengubah ide menjadi karya digital yang berguna dan menyenangkan untuk pengguna.</span>
             </div>
             <div className="flex text-white font-medium">
-              <button className="px-4 py-2 bg-purple-600 rounded-sm text-sm md:text-base">Say Hello!</button>
+              <a href="#contact">
+                <button className="px-4 py-2 bg-purple-600 rounded-sm text-sm md:text-base">Say Hello!</button>
+              </a>
             </div>
           </div>
           <div className="flex flex-col gap-4 w-full md:w-1/2">
@@ -410,7 +459,7 @@ function Home() {
           <form 
             action={import.meta.env.VITE_FORMSPREE_ENDPOINT} 
             method="POST" 
-            className="flex flex-col gap-4 md:gap-6 w-full md:w-1/2"
+            className="flex flex-col gap-4 md:pt-6 md:gap-6 w-full md:w-1/2"
           >
             <div className="text-sm md:text-base">
               <span>Punya pertanyaan, ide, atau ingin bekerja sama? Tulis saja di form di bawah, dan saya akan segera menghubungi Anda kembali.</span>
@@ -513,13 +562,12 @@ function Home() {
             <div className='font-semibold text-lg md:text-xl'>Syarif</div>
           </div>
           <div className="flex flex-wrap gap-2 md:gap-4 justify-center text-sm md:text-base">
-            <button className="px-2 py-1">Home</button>
-            <button className="px-2 py-1">About</button>
-            <button className="px-2 py-1">Services</button>
-            <button className="px-2 py-1">Process</button>
-            <button className="px-2 py-1">Portfolio</button>
-            <button className="px-2 py-1">Blog</button>
-            <button className="px-2 py-1">Contact</button>
+            <button className="px-2 py-1">Beranda</button>
+            <button className="px-2 py-1">Tentang</button>
+            <button className="px-2 py-1">Layanan</button>
+            <button className="px-2 py-1">Proses</button>
+            <button className="px-2 py-1">Proyek</button>
+            <button className="px-2 py-1">Kontak</button>
           </div>
           <div className="flex items-center gap-2 justify-center text-sm md:text-base">
             <span>Copyright</span>

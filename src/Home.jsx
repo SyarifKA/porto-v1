@@ -87,11 +87,11 @@ function Home() {
 
   const projectList = [
     {
-      image: avocado,
+      image: "/public/kuliner-POS.png",
       name: "UI-UX DESIGN",
       title: "Product Admin Dashboard",
       desc : "lorem ipsum dolor sit, amet consectuer adipsijcing elit.",
-      redirect: "#home"
+      redirect: "https://inquisitive-cranachan-f1221f.netlify.app/"
     },
     {
       image: avocado,
@@ -338,12 +338,12 @@ function Home() {
                 <div className="">
                   <img src={item.image} alt="" className="w-full" />
                 </div>
-                <div className="flex flex-col gap-2 p-4 text-sm">
+                <div className="flex flex-col gap-2 p-4 text-sm border-t-2 border-t-purple-500">
                   <span className="">{item.name}</span>
                   <span className="text-lg md:text-xl font-medium">{item.title}</span>
                   <p className="text-xs md:text-sm">{item.desc}</p>
                   <div>
-                    <a href={item.redirect}>
+                    <a href={item.redirect} target="_blank">
                     <button className="flex justify-center items-center gap-2 border px-4 py-2 text-purple-500 rounded-lg border-purple-500 text-sm">
                       <span>Case Study</span>
                       <IoIosArrowRoundForward />
